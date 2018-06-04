@@ -1,33 +1,33 @@
 import React, { Component } from "react";
 import FacebookLogin from "react-facebook-login";
+import { createUser, fetchUser } from '../actions/users'
+import {connect} from 'react-redux'
 
-export default class Facebook extends Component {
+class Facebook extends Component {
   state = {
-    isLoggedIn: false,
-    userID: "",
-    name: "",
-    email: "",
-    picture: ""
+    isLoggedIn: false
   };
 
   responseFacebook = response => {
-    // console.log(response);
+
+    console.log(response)
+  this.props.fetchUser(response.userID)
+  
 
     this.setState({
-      isLoggedIn: true,
-      userID: response.userID,
-      name: response.name,
-      email: response.email,
-      picture: response.picture.data.url
-    });
-  };
+      isLoggedIn: true
+    })
+  }
 
   componentClicked = () => console.log("clicked");
 
   render() {
     let fbContent;
+      const { user } = this.props
 
     if (this.state.isLoggedIn) {
+
+      console.log(user)
       fbContent = (
         <div
           style={{
@@ -37,12 +37,14 @@ export default class Facebook extends Component {
             padding: "20px"
           }}
         >
-          <img src={this.state.picture} alt={this.state.name} />
-          <h2>Welcome {this.state.name}</h2>
-          Email: {this.state.email}
+          <img src={user.picture} alt={user.name} />
+          <h2>Welcome {user.name}</h2>
+          Email: {user.email}
         </div>
       );
+      console.log(this.state)
     } else {
+      console.log("else")
       fbContent = (
         <FacebookLogin
           appId="146628039382198"
@@ -54,6 +56,13 @@ export default class Facebook extends Component {
       );
     }
 
-    return <div>{fbContent}</div>;
+    return <div>{fbContent}</div>
   }
 }
+const mapStateToProps = function (state) {
+  return {
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps, { createUser, fetchUser })(Facebook)
