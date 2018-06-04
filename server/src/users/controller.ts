@@ -10,6 +10,15 @@ export const baseUrl = 'http://localhost:4008'
 @JsonController()
 export default class UserController {
 
+  @Get('/users/:id([0-9]+)')
+    @HttpCode(200)
+    getQuiz(
+      @Param('id') id: number
+    )
+    {
+      return User.findOneById(id)
+    }
+
  @Post("/users")
  @HttpCode(201)
  async createUser(
@@ -17,8 +26,8 @@ export default class UserController {
 ) {
   const entity = await User.create({
     name: name,
-    picture: picture,
-    userID: userID,
+    picture: picture.data.url,
+    id: userID,
     email: email,
  }).save();
 
