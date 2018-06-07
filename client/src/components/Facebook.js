@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import FacebookLogin from "react-facebook-login";
 import { createUser, fetchUser } from '../actions/users'
+import { Button } from 'react-bootstrap';
 import {connect} from 'react-redux'
+import {Redirect, Link} from 'react-router-dom'
 
 class Facebook extends Component {
   state = {
@@ -11,24 +13,23 @@ class Facebook extends Component {
   responseFacebook = response => {
 
     console.log(response)
-  this.props.fetchUser(response.userID)
-  
+    this.props.createUser(response)
+    this.props.fetchUser(response.userID)
 
-    this.setState({
-      isLoggedIn: true
-    })
   }
 
-  componentClicked = () => console.log("clicked");
+  componentClicked = () => {
+    console.log("click")
+  }
 
   render() {
     let fbContent;
       const { user } = this.props
 
-    if (this.state.isLoggedIn) {
-
-      console.log(user)
+    if (user) {
+      console.log(user.name)
       fbContent = (
+        <div>
         <div
           style={{
             width: "400px",
@@ -41,8 +42,10 @@ class Facebook extends Component {
           <h2>Welcome {user.name}</h2>
           Email: {user.email}
         </div>
-      );
-      console.log(this.state)
+         <Button bsStyle="primary" href="./"
+         >Go to profile</Button>
+         </div>
+      )
     } else {
       console.log("else")
       fbContent = (

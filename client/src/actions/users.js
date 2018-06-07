@@ -4,6 +4,8 @@ const baseUrl = 'http://localhost:4008'
 
 export const ADD_USER = 'ADD_USER'
 export const FETCH_USER = 'FETCH_USER'
+export const LOG_OUT = 'Log_OUT'
+
 
   export const createUser = (user) => (dispatch) => {
     request
@@ -26,3 +28,7 @@ export const FETCH_USER = 'FETCH_USER'
   })
 .catch(err => console.error(err))
 }
+
+export const logout = () => ({
+  type: LOG_OUT
+})
