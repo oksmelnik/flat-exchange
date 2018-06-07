@@ -42,10 +42,9 @@ class Profile extends Component {
   }
 }
 
-const mapStateToProps = function (state) {
-  return {
-    user: state.user.user
+const mapStateToProps = state => ({
+    user: state.user.user === null ? null : state.user.user
   }
-}
+)
 
 export default connect(mapStateToProps, { })(Profile)
