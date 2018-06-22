@@ -30,7 +30,7 @@ export default class UserController {
     id: userID,
     email: email,
  }).save();
-
  return entity;
 }
+
 }
