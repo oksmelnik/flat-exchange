@@ -14,15 +14,12 @@ class Profile extends Component {
 
 
     return (
+      <div className="container"
+      style={{  }}>
       <div className="row">
         <div className="col-md-3">
-          <div className="center">
-          <Image src={user.picture} rounded/>
-          </div>
           <Panel bsStyle="primary">
-            <Panel.Heading>
-      Verification
-      </Panel.Heading>
+            <Panel.Heading>Verification</Panel.Heading>
             <Panel.Body>
               <ListGroup>
                   <ListGroupItem>Email Address {user.email}</ListGroupItem>
@@ -31,19 +28,20 @@ class Profile extends Component {
             </Panel.Body>
           </Panel>
         </div>
+    <div className="col-md-6">
+            <Image className="avatar-small" src={user.picture} rounded/>
 
-        <div className="col-md-9">
-          <h2>{user.name}</h2>
+            <div className="col-ms-3">
+            <h2>{user.name}</h2>
+            </div>
 
-        </div>
-      </div>
-
-      )
-  }
-}
+</div>
+</div>
+</div>
+      )}}
 
 const mapStateToProps = state => ({
-    user: state.user.user === null ? null : state.user.user
+    user: state.user === null ? null : state.user.user
   }
 )
 
