@@ -1,11 +1,11 @@
-import { BaseEntity, PrimaryColumn, Column, Entity, OneToMany, ManyToOne } from 'typeorm'
+import { BaseEntity, PrimaryColumn, PrimaryGeneratedColumn, Column, Entity, OneToMany, ManyToOne } from 'typeorm'
 import { IsString, IsBoolean, IsInt } from 'class-validator'
 import { User } from '../users/entity'
 
 @Entity()
 export class Flat extends BaseEntity {
 
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   id?: number
 
   @IsString()
