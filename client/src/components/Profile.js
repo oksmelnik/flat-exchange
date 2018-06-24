@@ -9,7 +9,7 @@ class Profile extends Component {
     const {user} = this.props
     if (!user) return (
       <Redirect to="/login" />
-    )
+  )
     console.log(user)
 
 
