@@ -4,3 +4,4 @@ Side-project to simplify flat exchange for vacation with friend and learn to bui
 ## Learning goals:
 * Become familier with Bootstrap
 * Integrate Facebook authentication and login
+![](https://github.com/oksmelnik/evaluation-front)
