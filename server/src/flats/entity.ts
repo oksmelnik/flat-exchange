@@ -25,7 +25,7 @@ export class Flat extends BaseEntity {
   address: string
 
   @IsBoolean()
-  @Column()
+  @Column({ nullable: true })
   is_active: boolean
 
   @ManyToOne(_ => User, user => user.flat, {onDelete: "CASCADE"})
