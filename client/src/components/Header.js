@@ -17,11 +17,8 @@ class Header extends Component {
     <NavItem eventKey={2} href="./">
       Profile
     </NavItem>
-    <NavItem eventKey={2} href="./myflat">
-      My flat
-    </NavItem>
-    <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-      <MenuItem eventKey={3.1}>Add slot</MenuItem>
+    <NavDropdown eventKey={3} title="My Flat" id="basic-nav-dropdown">
+      <MenuItem eventKey={3.1} href="./new">Add flat</MenuItem>
       <MenuItem divider />
       <MenuItem eventKey={3.4}>Edit profile</MenuItem>
     </NavDropdown>

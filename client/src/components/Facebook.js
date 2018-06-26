@@ -11,8 +11,6 @@ class Facebook extends Component {
   };
 
   responseFacebook = response => {
-
-    console.log(response)
     this.props.createUser(response)
     this.props.fetchUser(response.userID)
 
@@ -27,7 +25,6 @@ class Facebook extends Component {
       const { user } = this.props
 
     if (user) {
-      console.log(user.name)
       fbContent = (
         <div>
         <div
@@ -35,19 +32,16 @@ class Facebook extends Component {
             width: "400px",
             margin: "auto",
             background: "#f4f4f4",
-            padding: "20px"
+            padding: "20px",
           }}
         >
           <img src={user.picture} alt={user.name} />
           <h2>Welcome {user.name}</h2>
           Email: {user.email}
         </div>
-         <Button bsStyle="primary" href="./"
-         >Go to profile</Button>
          </div>
       )
     } else {
-      console.log("else")
       fbContent = (
         <FacebookLogin
           appId="146628039382198"

@@ -4,23 +4,28 @@ import './App.css';
 import Header from './components/Header'
 import Facebook from './components/Facebook'
 import Profile from './components/Profile'
+import { createBrowserHistory } from 'history'
 import LogoutPage from './components/Logout'
-import FlatPage from './components/flats/FlatPage'
+import FlatNew from './components/flats/FlatNew'
+import Dashboard from './components/flats/Dashboard'
+import { ConnectedRouter } from 'connected-react-router'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+import history from './MyHistory'
 
 class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div>
+      <ConnectedRouter history={history}>
+        {<div>
           <Header />
           <Route exact path="/login" component={Facebook} />
           <Route exact path="/" component={Profile} />
           <Route exact path="/logout" component={LogoutPage} />
-          <Route exact path="/myflat" component={FlatPage} />
-        </div>
-      </Router>
+          <Route exact path="/new" component={FlatNew} />
+          <Route exact path="/:id/dashboard" component={Dashboard} />
+        </div>}
+      </ConnectedRouter>
     )
   }
 }

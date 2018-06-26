@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import { Image, Panel, ListGroup, ListGroupItem } from 'react-bootstrap';
 import {connect} from 'react-redux'
 import '../Profile.css'
-import {Redirect, Link} from 'react-router-dom'
+import {Redirect, Link, withRouter} from 'react-router-dom'
 import Sidebar from './Sidebar'
 import FlatForm from './FlatForm'
 import { addFlat } from '../../actions/flats'
 
 class FlatPage extends Component {
 
-  addFlat = (flat) => {
-    console.log(flat)
+  createFlat = (flat) => {
     const userId = this.props.user.id
      this.props.addFlat(flat, userId)
    }
@@ -32,7 +31,7 @@ class FlatPage extends Component {
           <div className="panel-heading">
             Create your flat
             </div>
-            <FlatForm onSubmit={this.addFlat}/>
+            <FlatForm onSubmit={this.createFlat}/>
             </div>
           </div>
         </div>

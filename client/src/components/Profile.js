@@ -10,12 +10,10 @@ class Profile extends Component {
     if (!user) return (
       <Redirect to="/login" />
   )
-    console.log(user)
 
 
     return (
-      <div className="container"
-        style={{  }}>
+      <div className="container">
         <div className="row">
           <div className="col-md-3">
             <Panel bsStyle="primary">

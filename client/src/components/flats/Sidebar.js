@@ -7,7 +7,7 @@ class Sidebar extends Component {
 
             <ul>
             <li className="sidebar-item">
-                <a className="nav-link active" href="#">
+                <a className="nav-link active" href="./dashboard">
                   Dashboard
                 </a>
               </li>
@@ -18,7 +18,7 @@ class Sidebar extends Component {
                 </a>
               </li>
 
-              <li className="sidebar-item" href="#">
+              <li className="sidebar-item" >
                   <a className="nav-link" href="#">
                   Description
                    </a>
