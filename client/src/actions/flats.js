@@ -10,8 +10,9 @@ export const addFlat = (flat, id) => (dispatch) => {
       .post(`${baseUrl}/${id}/flats/`)
       .send(flat)
       .then(response => dispatch({
-  type: ADD_FLAT,
-  payload: response.body
-})),
-dispatch(push('/dashboard'))
-  }
+        type: ADD_FLAT,
+        payload: response.body,
+          },
+        dispatch(push(`${response.body.id}/dashboard`))
+        ))
+    }
