@@ -8,17 +8,13 @@ import {Redirect, Link} from 'react-router-dom'
 class Facebook extends Component {
   state = {
     isLoggedIn: false
-  };
+  }
 
   responseFacebook = response => {
     this.props.createUser(response)
     this.props.fetchUser(response.userID)
+    }
 
-  }
-
-  componentClicked = () => {
-    console.log("click")
-  }
 
   render() {
     let fbContent;

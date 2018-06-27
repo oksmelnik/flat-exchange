@@ -1,41 +1,40 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
+import {connect} from 'react-redux'
+import '../Profile.css'
+import {Redirect} from 'react-router-dom'
+import Sidebar from './Sidebar'
+
 
 class PhotoUpload extends Component {
+
   render() {
+    const {user} = this.props
+    if (!user) return (
+      <Redirect to="/login" />
+      )
+
     return (
+      <div className='container'>
+      <div className='row'>
+      <div className='col-md-2'>
+        <Sidebar/>
+        </div>
+      <div className='col-md-10'>
+        <div className='panel panel-default'>
+          <div className="panel-heading">
+            Photo Upload
+            </div>
 
-            <ul>
-            <li className="sidebar-item">
-                <a className="nav-link active" href="#">
-                  Dashboard
-                </a>
-              </li>
 
-              <li className="sidebar-item" href="#">
-                <a className="nav-link" href="#">
-                  Listings
-                </a>
-              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}}
 
-              <li className="sidebar-item" href="#">
-                  <a className="nav-link" href="#">
-                  Description
-                   </a>
-                </li>
+const mapStateToProps = state => ({
+    user: state.user === null ? null : state.user.user
+  }
+)
 
-              <li className="sidebar-item" href="#">
-               <a className="nav-link" href="#">
-                Photos
-                </a>
-                </li>
-
-                <li className="sidebar-item" href="#">
-                 <a className="nav-link" href="#">
-                  Location
-                  </a>
-                  </li>
-              </ul>
-
-            )}}
-export default PhotoUpload;
+export default connect(mapStateToProps, { })(PhotoUpload)

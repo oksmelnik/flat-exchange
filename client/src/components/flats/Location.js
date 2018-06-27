@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import { Image, Panel, ListGroup, ListGroupItem } from 'react-bootstrap';
 import {connect} from 'react-redux'
 import '../Profile.css'
-import {Redirect, Link, withRouter} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import Sidebar from './Sidebar'
-import { fetchFlat } from '../../actions/flats'
 
 
-class Dashboard extends Component {
-
-  componentWillMount(props) {
-  this.props.fetchFlat(this.props.match.params.id)
-}
+class Location extends Component {
 
   render() {
     const {user} = this.props
@@ -28,7 +22,7 @@ class Dashboard extends Component {
       <div className='col-md-10'>
         <div className='panel panel-default'>
           <div className="panel-heading">
-            Dashboard
+            Location
             </div>
 
 
@@ -43,4 +37,4 @@ const mapStateToProps = state => ({
   }
 )
 
-export default connect(mapStateToProps, { fetchFlat})(Dashboard)
+export default connect(mapStateToProps, { })(Location)

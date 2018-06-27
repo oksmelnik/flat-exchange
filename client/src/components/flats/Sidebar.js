@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
+import React, { Component } from 'react'
+import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 class Sidebar extends Component {
   render() {
@@ -7,33 +8,33 @@ class Sidebar extends Component {
 
             <ul>
             <li className="sidebar-item">
-                <a className="nav-link active" href="./dashboard">
+                <Link to="./dashboard">
                   Dashboard
-                </a>
+                </Link>
               </li>
 
               <li className="sidebar-item" href="#">
-                <a className="nav-link" href="#">
+                <Link to="./listings">
                   Listings
-                </a>
+                </Link>
               </li>
 
               <li className="sidebar-item" >
-                  <a className="nav-link" href="#">
+                  <Link to="./description">
                   Description
-                   </a>
+                  </Link>
                 </li>
 
               <li className="sidebar-item" href="#">
-               <a className="nav-link" href="#">
-                Photos
-                </a>
+                <Link to="./photo">
+                  Photos
+                  </Link>
                 </li>
 
                 <li className="sidebar-item" href="#">
-                 <a className="nav-link" href="#">
+                  <Link to="./location">
                   Location
-                  </a>
+                  </Link>
                   </li>
               </ul>
 
