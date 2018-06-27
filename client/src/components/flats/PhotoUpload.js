@@ -19,17 +19,43 @@ class PhotoUpload extends Component {
       <div className='col-md-2'>
         <Sidebar/>
         </div>
-      <div className='col-md-10'>
-        <div className='panel panel-default'>
-          <div className="panel-heading">
+      <div className='col-md-9'>
+        <div className='panel'>
+          <div className='panel-heading'>
             Photo Upload
             </div>
+            <div className='panel-body'>
+              <div className='container'>
+                <div className='row'>
+                <div className='col-md-4 select'>
+                  <div className="form-group">
+                    <label>Accomodate</label>
+                        <select className="form-control" name='accomodate' onChange={this.handleChange}>
+                          <option value="" selected>Choose here</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          </select>
+                        </div>
+                      </div>
+
+                  <button
+                    type="submit"
+                    className="btn btn-normal"
+                    onClick={this.handleSubmit}>
+                    Submit
+                    </button>
+                  </div>
 
 
             </div>
           </div>
         </div>
       </div>
+      </div>
+    </div>
     )}}
 
 const mapStateToProps = state => ({

@@ -19,18 +19,47 @@ class Description extends Component {
       <div className='col-md-2'>
         <Sidebar/>
         </div>
-      <div className='col-md-10'>
-        <div className='panel panel-default'>
-          <div className="panel-heading">
+      <div className='col-md-9'>
+    <div className='panel'>
+          <div className='panel-heading'>
             Description
             </div>
+            <div className='panel-body'>
+              <div className='container'>
+                <div className='row'>
+                <div className='col-md-4 select'>
+                  <div className="form-group">
+                  <label>Listing Name</label>
+                      <input className="form-control" name='accomodate' onChange={this.handleChange}>
+
+                        </input>
+                      </div>
+                    </div>
+
+                    <label>Summary</label>
+                        <input className="form-control" name='accomodate' onChange={this.handleChange}>
+
+                          </input>
+
+
+                    <div class="text-center">
+                      <button
+                        type="submit"
+                        className="btn btn-normal"
+                        onClick={this.handleSubmit}>
+                        Submit
+                        </button>
+                      </div>
+                    </div>
 
 
             </div>
           </div>
         </div>
       </div>
-    )}}
+     </div>
+    </div>
+  )}}
 
 const mapStateToProps = state => ({
     user: state.user === null ? null : state.user.user

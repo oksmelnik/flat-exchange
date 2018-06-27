@@ -1,4 +1,5 @@
 
+
 body {
   color: #565a5c;
   background-color: #F8F8F8;
@@ -11,7 +12,7 @@ a {
 
 .container {
   width: 80%;
-  
+
 }
 
 .text-babu, .icon-babu {
@@ -100,11 +101,18 @@ a {
 }
 
 // PANELS
-.panel-default .panel-heading {
+.panel-default {
   color: #ffffff;
   background-color: #00A699;
   font-size: 18px;
   font-weight: 400;
+}
+
+.panel-heading {
+ color: #ffffff;
+ background-color: #00A699;
+ font-size: 15px;
+ font-weight: 400;
 }
 
 .row-space-1 {
@@ -148,7 +156,7 @@ a {
 
 // FORMS
 .form-group {
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
 
 .form-control {

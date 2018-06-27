@@ -27,7 +27,7 @@ class FlatPage extends Component {
         <Sidebar/>
         </div>
       <div className='col-md-10'>
-        <div className='panel panel-default'>
+        <div className='panel'>
           <div className="panel-heading">
             Create your flat
             </div>

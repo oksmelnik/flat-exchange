@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import '../Profile.css'
 
 class FlatForm extends Component {
   state = {}
@@ -58,13 +58,15 @@ class FlatForm extends Component {
                         </select>
                       </div>
                     </div>
+                    <div class="text-center">
 
-                <button
-                  type="submit"
-                  className="btn btn-normal"
-                  onClick={this.handleSubmit}>
-                  Submit
-                  </button>
+                      <button
+                        type="submit"
+                        className="btn btn-normal"
+                        onClick={this.handleSubmit}>
+                        Submit
+                      </button>
+                    </div>
                 </div>
             </div>
           </div>
