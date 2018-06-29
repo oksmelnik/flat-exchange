@@ -4,33 +4,29 @@ import {connect} from 'react-redux'
 import '../Profile.css'
 import {Redirect, Link, withRouter} from 'react-router-dom'
 import Sidebar from './Sidebar'
-import { fetchFlat } from '../../actions/flats'
+import { fetchFlat, updateFlat } from '../../actions/flats'
+
 
 
 class Dashboard extends Component {
 
-  componentWillMount(props) {
-  this.props.fetchFlat(this.props.match.params.id)
-}
 
-  render() {
-    const {user, flat} = this.props
-    if (!user) return (
-      <Redirect to="/login" />
-      )
+
+    render() {
 
     return (
       <div className='container'>
       <div className='row'>
       <div className='col-md-2'>
-        <Sidebar flat={flat}/>
-        </div>
+
+      </div>
+
       <div className='col-md-10'>
         <div className='panel panel-default'>
-          <div className="panel-heading">
-            Dashboard
-            </div>
 
+          <div className="panel-heading">
+          Dashboard
+          </div>
 
             </div>
           </div>
@@ -38,10 +34,5 @@ class Dashboard extends Component {
       </div>
     )}}
 
-const mapStateToProps = state => ({
-    user: state.user === null ? null : state.user.user,
-    flat: state.flat === null ? null : state.flat
-  }
-)
 
-export default connect(mapStateToProps, { fetchFlat})(Dashboard)
+  export default Dashboard;

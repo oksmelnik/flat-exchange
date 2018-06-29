@@ -1,41 +1,35 @@
 import React, { Component } from 'react';
+import { Image, Panel, ListGroup, ListGroupItem } from 'react-bootstrap';
 import {connect} from 'react-redux'
 import '../Profile.css'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link, withRouter} from 'react-router-dom'
 import Sidebar from './Sidebar'
-import { updateFlat } from '../../actions/flats'
+import { fetchFlat, updateFlat } from '../../actions/flats'
 
 class Description extends Component {
 
-state={}
 
-  handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(this.state)
-    const update = this.state
-    this.props.updateFlat(update, this.props.match.params.id)
-  }
+      state={}
 
-  handleChange = (event) => {
-    const {name, value} = event.target
+      handleSubmit = (e) => {
+          e.preventDefault()
+          console.log(this.state)
+          const update = this.state
+          this.props.updateFlat(update, this.props.match.params.id)
+      }
 
-    this.setState({
-      [name]: value
-      })
-    }
+      handleChange = (event) => {
+        const {name, value} = event.target
+
+          this.setState({
+            [name]: value
+            })
+          }
 
   render() {
-    const {user} = this.props
-    if (!user) return (
-      <Redirect to="/login" />
-      )
 
     return (
-      <div className='container'>
-      <div className='row'>
-      <div className='col-md-2'>
-        <Sidebar />
-        </div>
+
       <div className='col-md-9'>
         <div className='panel'>
           <div className='panel-heading'>
@@ -79,8 +73,7 @@ state={}
           </div>
         </div>
       </div>
-     </div>
-    </div>
+
   )}}
 
 const mapStateToProps = state => {
@@ -103,4 +96,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { updateFlat })(Description)
+  export default Description;
