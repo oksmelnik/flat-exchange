@@ -22,6 +22,14 @@ export class Flat extends BaseEntity {
 
   @IsString()
   @Column('text', { nullable: true })
+  name: string
+
+  @IsString()
+  @Column('text', { nullable: true })
+  summary: string
+
+  @IsString()
+  @Column('text', { nullable: true })
   address: string
 
   @IsBoolean()
