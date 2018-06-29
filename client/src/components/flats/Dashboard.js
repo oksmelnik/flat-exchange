@@ -14,7 +14,7 @@ class Dashboard extends Component {
 }
 
   render() {
-    const {user} = this.props
+    const {user, flat} = this.props
     if (!user) return (
       <Redirect to="/login" />
       )
@@ -23,7 +23,7 @@ class Dashboard extends Component {
       <div className='container'>
       <div className='row'>
       <div className='col-md-2'>
-        <Sidebar/>
+        <Sidebar flat={flat}/>
         </div>
       <div className='col-md-10'>
         <div className='panel panel-default'>
@@ -39,7 +39,8 @@ class Dashboard extends Component {
     )}}
 
 const mapStateToProps = state => ({
-    user: state.user === null ? null : state.user.user
+    user: state.user === null ? null : state.user.user,
+    flat: state.flat === null ? null : state.flat
   }
 )
 

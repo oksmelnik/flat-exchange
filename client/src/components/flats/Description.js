@@ -7,6 +7,7 @@ import { updateFlat } from '../../actions/flats'
 
 class Description extends Component {
 
+state={}
 
   handleSubmit = (e) => {
     e.preventDefault()
@@ -33,7 +34,7 @@ class Description extends Component {
       <div className='container'>
       <div className='row'>
       <div className='col-md-2'>
-        <Sidebar/>
+        <Sidebar />
         </div>
       <div className='col-md-9'>
         <div className='panel'>
