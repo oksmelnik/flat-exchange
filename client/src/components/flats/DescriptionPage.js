@@ -1,10 +1,9 @@
 import Sidebar from "./Sidebar";
 import Description from "./Description";
 import React, { Component } from "react";
-import { Image, Panel, ListGroup, ListGroupItem } from "react-bootstrap";
 import { connect } from "react-redux";
 import "../Profile.css";
-import { Redirect, Link, withRouter } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Notifications, { success } from "react-notification-system-redux";
 import { fetchFlat, updateFlat } from "../../actions/flats";
 
@@ -18,7 +17,7 @@ class DescriptionPage extends Component {
       return (
         <button
           className="btn btn-normal btn-block"
-          onClick={this.handlePublish()}
+          onClick={this.handlePublish}
         >
           Publish
         </button>
@@ -30,7 +29,7 @@ class DescriptionPage extends Component {
   };
 
   handlePublish = () => {
-    updateFlat({ is_active: true }, this.props.match.params.id);
+    this.props.updateFlat({ is_active: true }, this.props.match.params.id);
   };
 
   render() {
@@ -48,7 +47,19 @@ class DescriptionPage extends Component {
           </div>
 
           <div className="col-md-9">
-            <Description onSubmit={this.flatUpdate} />
+            <div className="panel">
+              <div className="panel-heading">Description</div>
+              <div className="panel-body">
+                <div className="container">
+                  <div className="row">
+                    <Description
+                      onSubmit={this.flatUpdate}
+                      flat={this.props.flat}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
