@@ -1,5 +1,15 @@
 import * as request from "superagent";
 import { push } from "connected-react-router";
+import {
+  show,
+  success,
+  error,
+  warning,
+  info,
+  hide,
+  removeAll
+} from "react-notification-system-redux";
+import notificationOpts from "../data/notifications";
 
 const baseUrl = "http://localhost:4008";
 
@@ -52,9 +62,12 @@ export const updateFlat = (updates, flatId) => dispatch => {
     .put(`${baseUrl}/flats/${flatId}`)
     .send(updates)
     .then(response =>
-      dispatch({
-        type: UPDATE_FLAT,
-        payload: response.body
-      })
+      dispatch(
+        {
+          type: UPDATE_FLAT,
+          payload: response.body
+        },
+        dispatch(success(notificationOpts.updatedFlat))
+      )
     );
 };

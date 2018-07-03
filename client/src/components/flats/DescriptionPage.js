@@ -5,7 +5,7 @@ import { Image, Panel, ListGroup, ListGroupItem } from "react-bootstrap";
 import { connect } from "react-redux";
 import "../Profile.css";
 import { Redirect, Link, withRouter } from "react-router-dom";
-
+import Notifications, { success } from "react-notification-system-redux";
 import { fetchFlat, updateFlat } from "../../actions/flats";
 
 class DescriptionPage extends Component {
@@ -34,12 +34,13 @@ class DescriptionPage extends Component {
   };
 
   render() {
-    const { flat, user } = this.props;
+    const { flat, user, notifications } = this.props;
     if (!user) return <Redirect to="/login" />;
     if (flat === null) return null;
 
     return (
       <div className="container">
+        <Notifications notifications={notifications} />
         <div className="row">
           <div className="col-md-2">
             <Sidebar />
@@ -57,10 +58,11 @@ class DescriptionPage extends Component {
 
 const mapStateToProps = state => ({
   user: state.user === null ? null : state.user.user,
-  flat: state.flat === null ? null : state.flat
+  flat: state.flat === null ? null : state.flat,
+  notifications: state.notifications
 });
 
 export default connect(
   mapStateToProps,
-  { fetchFlat, updateFlat }
+  { fetchFlat, updateFlat, success }
 )(DescriptionPage);
