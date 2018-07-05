@@ -33,12 +33,26 @@ class Sidebar extends Component {
             </span>
           </li>
 
-          <li className="sidebar-item" href="#">
-            <Link to="./photo">Photos</Link>
+          <li className="sidebar-item">
+            <Link to="./dashboard">Dashboard</Link>
+            <span className="pull-right">
+              <i
+                className={() => {
+                  if (flat.name) "fa fa-check";
+                }}
+              />
+            </span>
           </li>
 
-          <li className="sidebar-item" href="#">
-            <Link to="./location">Location</Link>
+          <li className="sidebar-item">
+            <Link to="./dashboard">Dashboard</Link>
+            <span className="pull-right">
+              <i
+                className={() => {
+                  if (flat.name) "fa fa-check";
+                }}
+              />
+            </span>
           </li>
         </ul>
         <hr />

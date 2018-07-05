@@ -1,5 +1,5 @@
 import Sidebar from "./Sidebar";
-import Description from "./DescriptionForm";
+import Location from "./Location";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "../Profile.css";
@@ -7,7 +7,7 @@ import { Redirect } from "react-router-dom";
 import Notifications, { success } from "react-notification-system-redux";
 import { fetchFlat, updateFlat } from "../../actions/flats";
 
-class LocationPage extends Component {
+class DescriptionPage extends Component {
   componentWillMount() {
     this.props.fetchFlat(this.props.match.params.id);
   }
@@ -52,7 +52,7 @@ class LocationPage extends Component {
               <div className="panel-body">
                 <div className="container">
                   <div className="row">
-                    <Description
+                    <Location
                       onSubmit={this.flatUpdate}
                       flat={this.props.flat}
                     />
@@ -76,4 +76,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { fetchFlat, updateFlat, success }
-)(LocationPage);
+)(DescriptionPage);

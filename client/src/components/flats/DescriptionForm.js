@@ -39,7 +39,7 @@ class Description extends Component {
           onChange={this.handleChange}
         />
 
-        <div class="text-center">
+        <div className="text-center">
           <button
             type="submit"
             className="btn btn-normal"

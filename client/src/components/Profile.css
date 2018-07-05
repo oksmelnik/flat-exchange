@@ -71,6 +71,7 @@ a {
 .btn.btn-normal {
   border: 1px solid #ff5a5f;
   background-color: #ff5a5f;
+  margin-top: 10px;
 }
 
 .btn.btn-normal:active {
