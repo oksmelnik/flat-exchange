@@ -11,17 +11,17 @@ class Header extends Component {
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <NavItem eventKey={1} href="./logout">
+          <NavItem eventKey={1} href="/logout">
             Log Out
           </NavItem>
-          <NavItem eventKey={1} href="./rooms">
+          <NavItem eventKey={1} href="/rooms">
             My listings
           </NavItem>
-          <NavItem eventKey={2} href="./">
+          <NavItem eventKey={2} href="/">
             Profile
           </NavItem>
           <NavDropdown eventKey={3} title="Settings" id="basic-nav-dropdown">
-            <MenuItem eventKey={3.1} href="./new">
+            <MenuItem eventKey={3.1} href="/new">
               Add flat
             </MenuItem>
             <MenuItem divider />

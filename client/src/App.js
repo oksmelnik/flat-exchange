@@ -31,10 +31,8 @@ class App extends Component {
               path="/edit/:id/description"
               component={DescriptionPage}
             />
-            <Route exact path="/:id/description" component={DescriptionPage} />
-            <Route exact path="/:id/photo" component={PhotoUpload} />
-            <Route exact path="/:id/listings" component={PhotoUpload} />
-            <Route exact path="/:id/location" component={LocationPage} />
+            <Route exact path="/edit/:id/photo" component={PhotoUpload} />
+            <Route exact path="/edit/:id/location" component={LocationPage} />
           </div>
         }
       </ConnectedRouter>

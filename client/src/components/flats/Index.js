@@ -24,7 +24,7 @@ class Index extends Component {
           </h4>
         </div>
         <div class="col-md-3 right">
-          <Link to={`/edit/${item.id}`} className="btn btn-form">
+          <Link to={`/edit/${item.id}/description`} className="btn btn-form">
             Update
           </Link>
         </div>

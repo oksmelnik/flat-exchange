@@ -7,7 +7,7 @@ import { Redirect } from "react-router-dom";
 import Notifications, { success } from "react-notification-system-redux";
 import { fetchFlat, updateFlat } from "../../actions/flats";
 
-class DescriptionPage extends Component {
+class LocationPage extends Component {
   componentWillMount() {
     this.props.fetchFlat(this.props.match.params.id);
   }
@@ -76,4 +76,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { fetchFlat, updateFlat, success }
-)(DescriptionPage);
+)(LocationPage);

@@ -18,15 +18,11 @@ class Sidebar extends Component {
           </li>
 
           <li className="sidebar-item" href="#">
-            <Link to="./listings">Location</Link>
+            <Link to="./location">Location</Link>
           </li>
 
           <li className="sidebar-item">
-            <Link to="./dashboard">Photo</Link>
-          </li>
-
-          <li className="sidebar-item">
-            <Link to="./dashboard">Dashboard</Link>
+            <Link to="./photo">Photo</Link>
           </li>
         </ul>
         <hr />
