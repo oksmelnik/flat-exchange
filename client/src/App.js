@@ -26,7 +26,11 @@ class App extends Component {
             <Route exact path="/logout" component={LogoutPage} />
             <Route exact path="/new" component={FlatNew} />
             <Route exact path="/rooms" component={Index} />
-            <Route exact path="/edit/:id" component={Sidebar} />
+            <Route
+              exact
+              path="/edit/:id/description"
+              component={DescriptionPage}
+            />
             <Route exact path="/:id/description" component={DescriptionPage} />
             <Route exact path="/:id/photo" component={PhotoUpload} />
             <Route exact path="/:id/listings" component={PhotoUpload} />

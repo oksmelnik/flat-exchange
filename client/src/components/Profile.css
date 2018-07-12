@@ -91,9 +91,9 @@ a {
   background-color: #066165;
 }
 
-.btn.btn-facebook {
-  border: 1px solid #3b5998;
-  background-color: #3b5998;
+.btn-facebook {
+  position: absolute;
+  margin: auto;
 }
 
 .btn.btn-facebook:active {

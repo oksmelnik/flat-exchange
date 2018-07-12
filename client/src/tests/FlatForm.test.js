@@ -9,6 +9,12 @@ describe("<FlatForm component />", () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it("have 3 fields", () => {
+    const wrapper = shallow(<FlatForm />);
+    const count = wrapper.find(".form-group");
+    expect(count.length).toEqual(3);
+  });
+
   it("starts with an empty array", () => {
     const wrapper = shallow(<FlatForm />);
     const text = wrapper

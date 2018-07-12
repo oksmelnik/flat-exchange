@@ -28,7 +28,7 @@ export const addFlat = (flat, id) => dispatch => {
           type: ADD_FLAT,
           payload: response.body
         },
-        dispatch(push(`${response.body.id}/description`))
+        dispatch(push(`edit/${response.body.id}/description`))
       )
     );
 };

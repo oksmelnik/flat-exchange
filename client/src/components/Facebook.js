@@ -1,42 +1,41 @@
 import React, { Component } from "react";
 import FacebookLogin from "react-facebook-login";
-import { createUser, fetchUser } from '../actions/users'
-import { Button } from 'react-bootstrap';
-import {connect} from 'react-redux'
-import {Redirect, Link} from 'react-router-dom'
+import { createUser, fetchUser } from "../actions/users";
+import { Button } from "react-bootstrap";
+import { connect } from "react-redux";
+import { Redirect, Link } from "react-router-dom";
 
 class Facebook extends Component {
   state = {
     isLoggedIn: false
-  }
+  };
 
   responseFacebook = response => {
-    this.props.createUser(response)
-    this.props.fetchUser(response.userID)
-    }
-
+    this.props.createUser(response);
+    this.props.fetchUser(response.userID);
+  };
 
   render() {
     let fbContent;
-      const { user } = this.props
+    const { user } = this.props;
 
     if (user) {
       fbContent = (
         <div>
-        <div
-          style={{
-            width: "400px",
-            margin: "auto",
-            background: "#f4f4f4",
-            padding: "20px",
-          }}
-        >
-          <img src={user.picture} alt={user.name} />
-          <h2>Welcome {user.name}</h2>
-          Email: {user.email}
+          <div
+            style={{
+              width: "400px",
+              margin: "auto",
+              background: "#f4f4f4",
+              padding: "20px"
+            }}
+          >
+            <img src={user.picture} alt={user.name} />
+            <h2>Welcome {user.name}</h2>
+            Email: {user.email}
+          </div>
         </div>
-         </div>
-      )
+      );
     } else {
       fbContent = (
         <FacebookLogin
@@ -49,13 +48,16 @@ class Facebook extends Component {
       );
     }
 
-    return <div>{fbContent}</div>
+    return <div>{fbContent}</div>;
   }
 }
-const mapStateToProps = function (state) {
+const mapStateToProps = function(state) {
   return {
     user: state.user
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, { createUser, fetchUser })(Facebook)
+export default connect(
+  mapStateToProps,
+  { createUser, fetchUser }
+)(Facebook);
