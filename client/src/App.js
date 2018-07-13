@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import Facebook from "./components/Facebook";
 import Profile from "./components/Profile";
 import LogoutPage from "./components/Logout";
-import Sidebar from "./components/flats/Sidebar";
 import FlatNew from "./components/flats/FlatNew";
 import Index from "./components/flats/Index";
 import LocationPage from "./components/flats/LocationPage";

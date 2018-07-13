@@ -21,6 +21,8 @@ class Description extends Component {
   };
 
   render() {
+    const { flat } = this.props;
+
     return (
       <form className="form-group">
         <label>Listing Name</label>
