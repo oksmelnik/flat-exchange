@@ -1,5 +1,5 @@
 import Sidebar from "./Sidebar";
-import Location from "./Location";
+import Location from "./LocationForm";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "../Profile.css";
@@ -8,22 +8,6 @@ import Notifications, { success } from "react-notification-system-redux";
 import { fetchFlat, updateFlat } from "../../actions/flats";
 
 class LocationPage extends Component {
-  componentWillMount() {
-    this.props.fetchFlat(this.props.match.params.id);
-  }
-
-  renderButton = flat => {
-    if (flat.is_active === null)
-      return (
-        <button
-          className="btn btn-normal btn-block"
-          onClick={this.handlePublish}
-        >
-          Publish
-        </button>
-      );
-  };
-
   flatUpdate = update => {
     this.props.updateFlat(update, this.props.match.params.id);
   };
@@ -34,7 +18,6 @@ class LocationPage extends Component {
 
   render() {
     const { flat, user, notifications } = this.props;
-    if (!user) return <Redirect to="/login" />;
     if (flat === null) return null;
 
     return (
@@ -43,7 +26,6 @@ class LocationPage extends Component {
         <div className="row">
           <div className="col-md-2">
             <Sidebar />
-            {this.renderButton(flat)}
           </div>
 
           <div className="col-md-9">

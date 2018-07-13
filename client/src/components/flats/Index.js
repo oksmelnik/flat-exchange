@@ -12,18 +12,17 @@ class Index extends Component {
   }
 
   renderList = item => {
-    const ind = item.id;
     return (
       <div className="row">
         <div className="col-md-2">
           <img src="./R21.jpg" className="photoP" />
         </div>
-        <div class="col-md-7">
+        <div className="col-md-7">
           <h4>
             {item.id} {item.name}
           </h4>
         </div>
-        <div class="col-md-3 right">
+        <div className="col-md-3 right">
           <Link to={`/edit/${item.id}/description`} className="btn btn-form">
             Update
           </Link>

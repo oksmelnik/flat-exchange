@@ -7,6 +7,7 @@ import LogoutPage from "./components/Logout";
 import FlatNew from "./components/flats/FlatNew";
 import Index from "./components/flats/Index";
 import LocationPage from "./components/flats/LocationPage";
+import Preview from "./components/flats/Preview";
 import DescriptionPage from "./components/flats/DescriptionPage";
 import PhotoUpload from "./components/flats/PhotoUpload";
 import { ConnectedRouter } from "connected-react-router";
@@ -32,6 +33,7 @@ class App extends Component {
             />
             <Route exact path="/edit/:id/photo" component={PhotoUpload} />
             <Route exact path="/edit/:id/location" component={LocationPage} />
+            <Route exact path="/edit/:id/preview" component={Preview} />
           </div>
         }
       </ConnectedRouter>

@@ -13,16 +13,16 @@ class Sidebar extends Component {
             <Link to="./description">Description</Link>
           </li>
 
-          <li className="sidebar-item" name="dvhsnd">
-            <Link to="./dashboard">Dashboard</Link>
-          </li>
-
           <li className="sidebar-item" href="#">
             <Link to="./location">Location</Link>
           </li>
 
           <li className="sidebar-item">
             <Link to="./photo">Photo</Link>
+          </li>
+
+          <li className="sidebar-item" name="dvhsnd">
+            <Link to="./preview">Preview</Link>
           </li>
         </ul>
         <hr />

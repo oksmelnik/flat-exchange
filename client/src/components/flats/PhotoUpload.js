@@ -5,6 +5,17 @@ import { Redirect } from "react-router-dom";
 import Sidebar from "./Sidebar";
 
 class PhotoUpload extends Component {
+  state = {
+    selectedFile: null
+  };
+  photoSelector = event => {
+    this.setState = {
+      selectedFile: event.target.files[0]
+    };
+  };
+
+  uploadHandler = () => {};
+
   render() {
     const { user } = this.props;
     if (!user) return <Redirect to="/login" />;
@@ -21,10 +32,17 @@ class PhotoUpload extends Component {
               <div className="panel-body">
                 <div className="container">
                   <div className="row">
-                    <div className="col-md-4">
-                      <div className="form-group" />
+                    <div className="form-group">
+                      <span
+                        className="btn btn-default btn-file text-babu"
+                        onClick={this.uploadHandler}
+                      >
+                        <i className="fa fa-cloud-upload" aria-hidden="true" />
+                        Select Photos
+                      </span>
                     </div>
-
+                  </div>
+                  <div className="text-center">
                     <button
                       type="submit"
                       className="btn btn-normal"

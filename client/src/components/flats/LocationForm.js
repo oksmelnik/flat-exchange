@@ -1,23 +1,38 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import "../Profile.css";
-import { Redirect } from "react-router-dom";
 
 class Location extends Component {
+  state = {
+    address: this.props.flat.address || ""
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.onSubmit(this.state);
+  };
+
+  handleChange = event => {
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value
+    });
+  };
+
   render() {
-    const { user } = this.props;
-    if (!user) return <Redirect to="/login" />;
+    const { flat } = this.props;
 
     return (
-      <div className="form-group">
+      <form className="form-group">
         <label>What is your address?</label>
         <input
           className="form-control"
-          name="accomodate"
+          value={this.state.address}
+          name="address"
           onChange={this.handleChange}
         />
 
-        <div class="text-center">
+        <div className="text-center">
           <button
             type="submit"
             className="btn btn-normal"
@@ -26,7 +41,7 @@ class Location extends Component {
             Submit
           </button>
         </div>
-      </div>
+      </form>
     );
   }
 }

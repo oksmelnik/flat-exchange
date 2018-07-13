@@ -12,38 +12,21 @@ class DescriptionPage extends Component {
     this.props.fetchFlat(this.props.match.params.id);
   }
 
-  renderButton = flat => {
-    if (flat.is_active === null)
-      return (
-        <button
-          className="btn btn-normal btn-block"
-          onClick={this.handlePublish}
-        >
-          Publish
-        </button>
-      );
-  };
-
   flatUpdate = update => {
     this.props.updateFlat(update, this.props.match.params.id);
-  };
-
-  handlePublish = () => {
-    this.props.updateFlat({ is_active: true }, this.props.match.params.id);
   };
 
   render() {
     const { flat, user, notifications } = this.props;
     if (!user) return <Redirect to="/login" />;
     if (flat === null) return null;
-    console.log(flat);
+
     return (
       <div className="container">
         <Notifications notifications={notifications} />
         <div className="row">
           <div className="col-md-2">
             <Sidebar />
-            {this.renderButton(flat)}
           </div>
 
           <div className="col-md-9">
